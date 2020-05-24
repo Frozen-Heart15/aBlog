@@ -1,0 +1,19 @@
+<%- include('header') %>
+
+    
+   <div class="container topdiv">
+     <div class="col-md-6 middle">  
+    <h2>Login User</h2>
+    <hr>
+    <%- messages('message_template', locals) %> 
+    <form method="POST" action="/user/login" class="form-group">
+        <label>Email:</label>
+        <input class="form-control" name="username" type="email" required>
+        <label>Password:</label>
+        <input class="form-control" name="password" type="password" required><br>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>
+   </div>
+  
+   <%- include('footer') %>

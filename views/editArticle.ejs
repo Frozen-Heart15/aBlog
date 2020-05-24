@@ -1,0 +1,18 @@
+<%- include('header') %>
+
+    
+   <div class="container topdiv">
+    <h2>Edit Article</h2>
+    <hr>
+    <form method="POST" action="/article/edit/<%= article._id %>" class="form-group">
+        <label>Title:</label>
+        <input class="form-control" name="title" type="text" value="<%= article.title %>" >
+        <label>Author:</label>
+        <input class="form-control" name="author" type="text" value="<%= article.author %>" >
+        <label>Body:</label>
+        <textarea name="body" class="form-control"> <%= article.body %> </textarea><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+   </div>
+  
+   <%- include('footer') %>

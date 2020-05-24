@@ -1,0 +1,16 @@
+<%- include('header') %>
+
+<div class="topdiv container">
+    <h1><%= article.title %></h1>
+    <h6 class="written">Written by <%= article.author %></h6><br>
+    <p class=""> <%= article.body %> </p>
+    <br>
+    <% if(user){ %>
+        <% if(user.name == article.author){ %>
+         <a class="btn btn-dark" href="/article/edit/<%= article._id %>">Edit</a>
+         <a class="btn btn-danger" href="/article/delete/<%= article._id %>" >Delete</a>
+         <% } %>
+     <% } %>	
+</div>
+
+<%- include('footer') %>

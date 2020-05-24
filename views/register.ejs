@@ -1,0 +1,28 @@
+<%- include('header') %>
+
+   <div class="container topdiv">
+       <div class="col-md-6 middle">
+    <h2>Register User</h2>
+    <hr>
+    <%- messages('message_template', locals) %> 
+    <% if(error){ %>
+        <%  error.forEach(err=>{ %>
+            <p style="color:red;margin-left:5px;margin-right:5px;border:solid 1px red;">
+              <%= err.msg %></p>
+        <%  }) %>
+        <% } %>
+    <form method="POST" action="/user/register" class="form-group">
+        <label>Name:</label>
+        <input class="form-control" name="name" type="text" required>
+        <label>Email:</label>
+        <input class="form-control" name="email" type="email" required>
+        <label>Password:</label>
+        <input class="form-control" name="pass" type="password" required>
+        <label>Confirm Password:</label>
+        <input class="form-control" name="cpass" type="password" required><br>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>
+   </div>
+  
+   <%- include('footer') %>

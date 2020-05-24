@@ -1,0 +1,19 @@
+<%- include('header') %>
+
+    
+   <div class="container topdiv">
+    <h2>Add Article</h2>
+    <hr>
+    <form method="POST" action="/article/add" class="form-group">
+        <label>Title:</label>
+        <input class="form-control" name="title" type="text" required>
+        <label>Author:</label>
+        <input name="author" type="hidden" value="<%= user.name %>">
+        <input class="form-control" name="author" type="text" value="<%= user.name %>" disabled>
+        <label>Body:</label>
+        <textarea name="body" class="form-control" required></textarea><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+   </div>
+  
+   <%- include('footer') %>
